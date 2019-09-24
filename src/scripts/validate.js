@@ -15,5 +15,10 @@ function validate(event) {
 
 function resetAllError() {
     const errorElements = document.querySelectorAll('.popup__error-message');
-    for(let elem of errorElements) elem.textContent = ' ';
+    for (let elem of errorElements) elem.textContent = ' ';
 }
+
+export {
+    resetAllError,
+    validate
+};

@@ -8,7 +8,7 @@ const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
     entry: {
-        main: './src/js/app.js'
+        main: './src/app.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
