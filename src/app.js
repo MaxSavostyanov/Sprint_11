@@ -1,7 +1,15 @@
 'use strict';
+import "./style.css";
+
+import {Api} from './scripts/api';
+import {CardList} from './scripts/cardList';
+import {Popup} from './scripts/popup';
+import {FormEdit} from './scripts/formEdit';
+import {FormAdd} from './scripts/formAdd';
+import {FormEditAvatar} from './scripts/formEditAvatar';
 
 const token = 'b4d1b43e-e04a-4764-a7fe-40543eeb3d35';
-const server = 'http://95.216.175.5/cohort2';
+const server = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort2' : 'https://praktikum.tk/cohort2';
 const api = new Api(token, server);
 
 const userName = document.querySelector('.user-info__name');
@@ -13,6 +21,7 @@ const cardList = new CardList(document.querySelector('.places-list'));
 const formAdd = new FormAdd(popup.formNewPlace);
 const formEdit = new FormEdit(popup.formEditUser);
 const editAvatar = new FormEditAvatar(popup.formEditAvatar);
+export {api, popup, cardList, formAdd, formEdit, editAvatar, userPhoto};
 
 function renderUser() {
     api.getUser()

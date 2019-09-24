@@ -1,6 +1,8 @@
 'use strict';
+import {Form} from './form';
+import {api, popup} from "../app";
 
-class FormEdit extends Form {
+export class FormEdit extends Form {
     submitForm(event) {
         super.submitForm(event);
 

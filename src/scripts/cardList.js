@@ -1,6 +1,8 @@
 'use strict';
+import {Card} from './card';
+import {api} from '../app';
 
-class CardList {
+export class CardList {
     constructor(container) {
         this.container = container;
         this.cards = [];

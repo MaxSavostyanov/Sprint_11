@@ -1,12 +1,13 @@
 'use strict';
 
-class Card {
+export class Card {
     constructor(name, link, id, like, owner) {
         this.name = name;
         this.link = link;
         this.id = id;
         this.like = like;
         this.owner = owner.name;
+        this.userName = document.querySelector('.user-info__name').textContent;
         this.cardElement = this.create();
     }
 
@@ -19,7 +20,7 @@ class Card {
         placeImage.style.backgroundImage = `url(${this.link})`;
         placeImage.dataset.url = this.link;
 
-        if (this.owner === userName.textContent) {
+        if (this.owner === this.userName) {
             const deleteButton = document.createElement('button');
             deleteButton.classList.add('place-card__delete-icon');
             deleteButton.dataset.id = this.id;
@@ -39,7 +40,7 @@ class Card {
 
         const likeButton = document.createElement('button');
         likeButton.classList.add('place-card__like-icon');
-        if (this.like.some(item => item.name === userName.textContent)) {
+        if (this.like.some(item => item.name === this.userName)) {
             likeButton.classList.add('place-card__like-icon_liked');
         }
         likeButton.dataset.id = this.id;

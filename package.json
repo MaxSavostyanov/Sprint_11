@@ -30,7 +30,8 @@
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1",
-    "webpack-md5-hash": "0.0.6"
+    "webpack-md5-hash": "0.0.6",
+    "win-node-env": "^0.4.0"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",

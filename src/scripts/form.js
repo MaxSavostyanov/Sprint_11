@@ -1,6 +1,7 @@
 'use strict';
+import {validate} from "./validate";
 
-class Form {
+export class Form {
     constructor(form) {
         this.form = form;
         this.submitBtn = this.form.elements.submit;

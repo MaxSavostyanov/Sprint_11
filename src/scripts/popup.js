@@ -1,6 +1,8 @@
 'use strict';
+import {resetAllError} from "./validate";
+import {formAdd,formEdit, editAvatar} from "../app";
 
-class Popup {
+export class Popup {
     constructor(container) {
         this.container = container;
         this.formEditUser = document.forms.editUser;

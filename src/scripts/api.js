@@ -1,6 +1,6 @@
 'use strict';
 
-class Api {
+export class Api {
     constructor(token, server) {
         this.token = token;
         this.server = server;
@@ -64,42 +64,42 @@ class Api {
 
     getLiked(event, toggleLike) {
         return fetch(`${this.server}/cards/like/${event.target.dataset.id}`, {
-            method: 'PUT',
-            headers: {
-                authorization: this.token,
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(res.status);
-        })
-        .then(card => {
-            toggleLike(event, card);
-        })
-        .catch(err => console.log(err));
+                method: 'PUT',
+                headers: {
+                    authorization: this.token,
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(res => {
+                if (res.ok) {
+                    return res.json();
+                }
+                return Promise.reject(res.status);
+            })
+            .then(card => {
+                toggleLike(event, card);
+            })
+            .catch(err => console.log(err));
     }
 
     removeLiked(event, toggleLike) {
         return fetch(`${this.server}/cards/like/${event.target.dataset.id}`, {
-            method: 'DELETE',
-            headers: {
-                authorization: this.token,
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(res.status);
-        })
-        .then(card => {
-            toggleLike(event, card);
-        })
-        .catch(err => console.log(err));
+                method: 'DELETE',
+                headers: {
+                    authorization: this.token,
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(res => {
+                if (res.ok) {
+                    return res.json();
+                }
+                return Promise.reject(res.status);
+            })
+            .then(card => {
+                toggleLike(event, card);
+            })
+            .catch(err => console.log(err));
     }
 
     setAvatar(link) {
