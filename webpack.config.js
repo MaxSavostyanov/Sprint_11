@@ -17,11 +17,11 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /\.js$/, 
+                test: /\.js$/,
                 use: {
                     loader: "babel-loader"
-                }, 
-                exclude: /node_modules/ 
+                },
+                exclude: /node_modules/
             },
             {
                 test: /\.(woff|woff2|ttf|otf|png|jpe?g|gif|svg)$/i,
@@ -34,14 +34,14 @@ module.exports = {
                     {
                         loader: 'image-webpack-loader',
                         options: {
-                            bypassOnDebug: true, 
-                            disable: true, 
+                            bypassOnDebug: true,
+                            disable: true,
                         }
                     }
                 ]
             },
             {
-                test: /\.css$/i, 
+                test: /\.css$/i,
                 use: [
                     (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
                     {
@@ -51,7 +51,7 @@ module.exports = {
                         }
                     },
                     'postcss-loader'
-                ] 
+                ]
             }
         ]
     },
@@ -68,9 +68,9 @@ module.exports = {
             canPrint: true
         }),
         new HtmlWebpackPlugin({
-            inject: false, 
-            hash: true, 
-            template: './src/index.html', 
+            inject: false,
+            hash: true,
+            template: './src/index.html',
             filename: 'index.html'
         }),
         new WebpackMd5Hash(),
