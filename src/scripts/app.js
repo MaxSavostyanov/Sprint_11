@@ -1,7 +1,7 @@
 'use strict';
 
 const token = 'b4d1b43e-e04a-4764-a7fe-40543eeb3d35';
-const server = 'http://95.216.175.5/cohort2';
+const server = 'https://nomoreparties.co/cohort2';
 const api = new Api(token, server);
 
 const userName = document.querySelector('.user-info__name');
